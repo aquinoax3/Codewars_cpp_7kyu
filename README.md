@@ -1,1 +1,1 @@
-# Codewars_C-_7kyu
+# Codewars_C++_7kyu
