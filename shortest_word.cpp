@@ -5,20 +5,23 @@
 #include <string>
 #include <unordered_map>
 #include <sstream>
-#include <iostream>
-
+#include <climits>
 int find_short(std::string str) {
     std::unordered_map<std::string, int> hash;
     std::stringstream ss(str);
     std::string word;
+    int min = INT_MAX;
     
     while(ss >> word) {
         hash[word] = word.size();
     }
     
+    
     for(auto i = hash.begin(); i != hash.end(); i++) {
-        std::cout << i->first << i->second << std::endl;
+        if(i->second < min) {
+        min = i->second;
+        }
     }
     
-    return 0;
+    return min;
 }
