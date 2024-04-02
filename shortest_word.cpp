@@ -3,7 +3,22 @@
 // String will never be empty and you do not need to account for different data types.
 
 #include <string>
-int find_short(std::string str)
-{
+#include <unordered_map>
+#include <sstream>
+#include <iostream>
+
+int find_short(std::string str) {
+    std::unordered_map<std::string, int> hash;
+    std::stringstream ss(str);
+    std::string word;
+    
+    while(ss >> word) {
+        hash[word] = word.size();
+    }
+    
+    for(auto i = hash.begin(); i != hash.end(); i++) {
+        std::cout << i->first << i->second << std::endl;
+    }
+    
     return 0;
 }
