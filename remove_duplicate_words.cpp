@@ -13,7 +13,7 @@
 #include <string>
 #include <sstream>
 #include <unordered_map>
-#include <iostream>
+
 
 std::string removeDuplicateWords(const std::string& str) {
     std::unordered_map<std::string, int> hash;
@@ -22,17 +22,14 @@ std::string removeDuplicateWords(const std::string& str) {
     std::string result;
     
     while (ss >> word) {
-        if(hash.find(word) != hash.end()) {
+        if(hash.find(word) == hash.end()) {
         hash[word]++;
-        } else {
-        hash[word]++;
-        }
+        result += word + " ";
+        } 
     }
+
     
-    for(auto i = hash.begin(); i != hash.end(); i++) {
-        std::cout << i->first << i->second << std::endl;
-        result += i->first + " ";
-    }
-        
-    std::cout << result << std::endl;
+    result.pop_back();
+    return result;
 }
+
