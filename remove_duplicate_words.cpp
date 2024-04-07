@@ -21,7 +21,7 @@ std::string removeDuplicateWords(const std::string& str) {
     std::string word;
     std::string result;
 
-    if(str.size() == 0) {
+    if(str.empty()) {
         return "";
     }
     
