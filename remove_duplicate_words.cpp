@@ -20,6 +20,10 @@ std::string removeDuplicateWords(const std::string& str) {
     std::stringstream ss(str);
     std::string word;
     std::string result;
+
+    if(str.size() == 0) {
+        return "";
+    }
     
     while (ss >> word) {
         if(hash.find(word) == hash.end()) {
