@@ -3,6 +3,8 @@
 
 // Good luck!
 
+#include <string>
+
 
 int solve(std::string s){
     int max = 0;
