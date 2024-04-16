@@ -44,7 +44,9 @@ bool isAnagram(std::string test, std::string original) {
             }
         }
         
+        // iterates through the hash to find a value that's greater that 0
         for(auto i = hash.begin(); i != hash.end(); i++) {
+            // if the value of the key is greater than 0, then it is not an anagram
             if (i->second > 0) {
             return false;
             }
