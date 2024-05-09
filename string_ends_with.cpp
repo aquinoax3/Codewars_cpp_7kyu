@@ -8,6 +8,7 @@
 
 
 #include <string>
+#include <iostream>
 
 
 bool solution(std::string const &str, std::string const &ending) {
