@@ -7,6 +7,7 @@
 
 
 #include <sstream>
+#include <algorithm>
 
 std::string reverse_words(std::string str) {
     std::stringstream ss(str);
@@ -14,11 +15,13 @@ std::string reverse_words(std::string str) {
     std::string result = "";
     
     while (ss >> word) {
-        result += word;
+    //     reverse(word.begin(), word.end());
+        result += word ;
     }
     
     for (auto el : result) {
         std::cout << el << std::endl;
     }
-    
+    result.pop_back();
+    return result;
 }
