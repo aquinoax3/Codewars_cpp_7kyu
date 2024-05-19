@@ -8,6 +8,7 @@
 
 #include <sstream>
 #include <algorithm>
+#include <iostream>
 
 std::string reverse_words(std::string str) {
     std::stringstream ss(str);
