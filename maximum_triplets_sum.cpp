@@ -30,22 +30,23 @@
 
 
 #include <vector>
+#include <set>
 #include <algorithm>
 
 int maxTriSum (std::vector<int> numbers) {
-  std::vector<int> newArr;
-  std::vector<int>::iterator ip;
   int sum = 0;
-    
-  ip = std::unique(numbers.begin(), numbers.begin() + 12);
+  // Remove duplicates by creating a set
+  std::set<int> no_dupe(numbers.begin(), numbers.end());
   
-  numbers.resize(std::distance(numbers.begin(), ip));
+  // Convert set to a vector
+  std::vector<int> newArr(no_dupe.begin(), no_dupe.end());
   
-//   for (ip = numbers.begin(); ip != numbers.end(); ip++) {
-//     std::cout << *ip << " " << std::endl; 
-//   }
+  // Sort vector in descending order
+  std::sort(newArr.begin(), newArr.end(), std::greater<int>());
   
-  for (auto num : numbers) {
-     std::cout << num << " " << std::endl; 
+  for (int i = 0; i < 3; i++) {
+    std::cout << newArr[i] << std::endl;
+    sum += newArr[i];
   }
+  return sum;
 }
