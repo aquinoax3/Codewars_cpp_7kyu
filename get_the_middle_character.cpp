@@ -18,7 +18,19 @@
 // The middle character(s) of the word represented as a string.
 
 
+#include <string>
 
 std::string get_middle(std::string input) {
-  // return the middle character(s)
+  std::string result = "";
+  if (input.size() % 2 != 0) {
+    int middle = input.size()/2;
+    result.push_back(input[middle]);
+    return result;
+  } else {
+    int middle = input.size()/2;
+    result.push_back(input[middle-1]);
+    result.push_back(input[middle]);
+    
+    return result;
+  }
 }
