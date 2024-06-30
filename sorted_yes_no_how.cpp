@@ -6,5 +6,30 @@
 // You can assume the array will always be valid, and there will always be one correct answer.
 
 std::string is_sorted_and_how(std::vector<int> array) {
-    return ""; // TODO: implementation
+  
+  if(array[0] < array[1]) {
+
+    for (int i = 0; i < array.size() - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        return "no";
+      }
+    
+    }
+    
+    return "yes, ascending";
+  
+  }
+  
+  
+  if (array[0] > array[1]) {
+    for (int i = 0; i < array.size() - 1; i++) {
+      if (array[i] < array[i + 1]){
+        return "no";
+      }
+    }
+    
+    return "yes, descending";
+  }
+  
+  
 }
