@@ -9,7 +9,32 @@
 
 // Good luck!
 #include <vector>
+#include <iostream>
 
-std::vector<int> solve(std::vector<int>v) {
-    //..
+std::vector<int> solve(std::vector<int> v)
+{
+    std::vector<int> result;
+    std::sort(v.begin(), v.end());
+
+    int i = 0;
+    int j = v.size() - 1;
+
+    while (i <= j)
+    {
+        if (i == j)
+        {
+            result.push_back(v[j]);
+        }
+        else
+        {
+            result.push_back(v[j]);
+            result.push_back(v[i]);
+        }
+
+        i++;
+        j--;
+    }
+
+    return result;
 }
+
