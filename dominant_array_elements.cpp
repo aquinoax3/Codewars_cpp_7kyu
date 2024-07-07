@@ -14,14 +14,16 @@
 
 std::vector<int> solve(std::vector<int> array){
   std::vector<int> result;
+  int max_element = array[array.size() - 1];
+  result.push_back(max_element);
   
-  for (int i = 0; i < array.size(); i++) {
-    if (array[i] > array[i + 1] && std::find(result.begin(), result.end(), array[i]) != result.end()) {
-         result.push_back(array[i]);
+  for (int i = array.size() - 2; i >= 0; i--) {
+    if (array[i] > max_element) {
+      result.push_back(array[i]);
+      max_element = array[i];
     }
   }
   
-  for (auto num : result) {
-    std::cout << num << std::endl;
-  }
+  std::reverse(result.begin(), result.end());
+  return result;
 }
