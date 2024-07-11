@@ -6,5 +6,23 @@
 #include <string>
  
 int sumOfIntegers (const std::string& str) {
-  return 0; // your code here
+  int i = 0;
+  std::string result = "";
+  int sum = 0;
+  
+  while (i < str.size()) {
+    if (isdigit(str[i])) {
+      std::cout << str[i] << std::endl;
+      result += str[i];
+      i++;
+    } else {
+      sum += stoi(result);
+      result = "";
+      i++;
+    }
+  }
+  
+  sum += stoi(result);
+  
+  return sum;
 }
