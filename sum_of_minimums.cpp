@@ -12,10 +12,18 @@
 
 // ENJOY CODING :)
 
-
 #include <vector>
+#include <algorithm>
+#include <iostream>
 
-int sum_of_minimums(const std::vector<std::vector<int>> &numbers)
-{
-    return 0;
+int sum_of_minimums(const std::vector<std::vector<int>> &numbers) {
+  int sum = 0;
+   
+  for (int i = 0; i < numbers.size(); i++) {
+    auto min = std::min_element(numbers[i].begin(), numbers[i].end());
+    sum += *min;
+  }
+
+
+  return sum;
 }
