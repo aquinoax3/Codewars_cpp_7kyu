@@ -14,6 +14,17 @@
 #include <vector>
 
 std::vector<std::string> friendOrFoe(const std::vector<std::string>& input) {
-        // Good luck!
-        return input;
+        std::vector<std::string> result;
+
+        for (auto word : input) {
+        if (word.size() == 4) {
+        result.push_back(word);
+        }
+        }
+
+        if (result.size() == 0) {
+        result.push_back("");
+        }
+
+        return result;
 }
