@@ -5,6 +5,18 @@
 
 #include <vector>
 
-int missingNo(std::vector<int> arr){
-    return 0;
+int missingNo(std::vector<int> arr) {
+    std::sort(arr.begin(), arr.end());
+    if (arr[0] != 0) {
+        return 0;
+    }
+    int num = 0;
+    
+    for (int i = 0; i < arr.size(); i++) {
+        num = arr[i];
+        if(num + 1 != arr[i + 1]){
+        break;
+        }
+    }
+    return num + 1;
 }
