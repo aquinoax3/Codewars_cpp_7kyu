@@ -39,10 +39,26 @@
 
 
 
+#include <vector>
 
-#include <vector> 
-
-std::vector <int> productArray (std::vector <int> numbers) {
-  // Your Code is Here ... Enjoy !!!
-    return;
+std::vector<int> productArray (std::vector<int> numbers) {
+  std::vector<int> result;
+  int i = 0;
+  int j = numbers.size() - 1;
+  int product = 1;
+  
+  while (i < numbers.size()) {
+    if (i != j) {
+      product *= numbers[j];
+      j--;
+      continue;
+    } else {
+      
+    }
+  }
 }
+
+
+// {1,5,2}
+//  i
+//  j
