@@ -9,8 +9,14 @@
 
 
 #include <cinttypes>
+#include <vector>
 
-uint64_t descendingOrder(uint64_t a)
-{
+uint64_t descendingOrder(uint64_t a) {
+  // create a vector
+  std::vector<int> result;
+  // store each digit into the vector
+  // sort the vector in descending order
+  // convert the vector to uint64 and then retrun it
+
   return 0;
 }
