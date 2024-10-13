@@ -4,25 +4,31 @@
 
 
 #include <string>
- 
-int sumOfIntegers (const std::string& str) {
-  int i = 0;
-  std::string result = "";
-  int sum = 0;
-  
-  while (i < str.size()) {
-    if (isdigit(str[i])) {
-      std::cout << str[i] << std::endl;
-      result += str[i];
-      i++;
-    } else {
-      sum += stoi(result);
-      result = "";
-      i++;
+#include <sstream>
+
+int sumOfIntegers(const std::string& str) {
+    int sum = 0;
+    std::string numStr = "";
+
+    for (char c : str) {
+        if (isdigit(c)) {
+            numStr += c;
+        } else if (!numStr.empty()) {
+            std::stringstream ss(numStr);
+            int num;
+            ss >> num;
+            sum += num;
+            numStr = "";
+        }
     }
-  }
-  
-  sum += stoi(result);
-  
-  return sum;
+
+    // Handle the last number if it exists
+    if (!numStr.empty()) {
+        std::stringstream ss(numStr);
+        int num;
+        ss >> num;
+        sum += num;
+    }
+
+    return sum;
 }
