@@ -10,19 +10,24 @@
 
 // Good luck!
 
-
+#include <vector>
 
 std::vector<int> wordValue(std::vector <std::string> arr){
-	//..
+
   std::vector<int> result;
-  int i = 0;
-  int j = 0;
+  std::string alpha = " abcdefghijklmnopqrstuvwxyz";
   
-  while (i < arr.size()) {
-   for (int j = 0; j < arr[i].size(); j++) {
-     if (isalpha(arr[i][j]) {
-       
-     }
-   }
+  
+  for (int i = 0; i < arr.size(); i++) {
+    int sum = 0;
+    
+    for (int j = 0; j < arr[i].size(); j++) {
+      if (isalpha(arr[i][j])){
+        sum += alpha.find(arr[i][j]);
+      }
+    }
+    result.push_back(sum * (i + 1));
   }
+//   std::cout << sum << std::endl;
+  return result;
 }
