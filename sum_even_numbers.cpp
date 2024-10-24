@@ -8,11 +8,7 @@
 // [4, 3, 1, 2, 5, 10, 6, 7, 9, 8]  -->  30   # because 4 + 2 + 10 + 6 + 8 = 30
 // []                               -->  0
 
-
-
-
 #include <vector>
-#include <cmath>
 
 int sum_even_numbers(const std::vector<double> &seq) {
   int sum = 0;
@@ -20,10 +16,10 @@ int sum_even_numbers(const std::vector<double> &seq) {
   for (auto num : seq) {
     int whole_num = num;
     double dub_num = whole_num - num;
-    if(whole_num % 2 == 0 && dub_num < 0) {
-      sum += whole_num;
+    if(whole_num % 2 == 0 && dub_num == 0) {
+        sum += num;
     }
   }
-  
+
   return sum;
 }
