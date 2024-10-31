@@ -14,23 +14,28 @@
 
 std::string solve(const std::string& str){
   if (str == "") return "";
+  std::string newStr = str;
   
   int upCount = 0;
   int downCount = 0;
   
-  for (char el : str) {
+  for (char el : newStr) {
     if (std::toupper(el) == el) {
       upCount++;
     } else {
       downCount++;
     }
   }
-  
-  std::cout << upCount << std::endl;
-  std::cout << downCount << std::endl;
-  
-  return upCount > downCount ? std::transform(str.begin(), str.end(), st::string.begin(), std::toupper) :
-  std::transform(str.begin(), str.end(), st::string.begin(), std::tolower)
-
+   
+  if (upCount == downCount) {
+    std::transform(newStr.begin(), newStr.end(), newStr.begin(), ::tolower);
+    return newStr;
+  } else if (upCount > downCount) {
+     std::transform(newStr.begin(), newStr.end(), newStr.begin(), ::toupper);
+    return newStr;
+  } else {
+    std::transform(newStr.begin(), newStr.end(), newStr.begin(), ::tolower);
+    return newStr;
+  }
 
 }
