@@ -9,6 +9,7 @@
 
 
 #include <cinttypes>
+#include <string>
 #include <algorithm>
 #include <cstdint>
 
