@@ -7,7 +7,22 @@
 // Enjoy it!!
 
 #include <vector>
+#include <unordered_map>
 
 std::vector<int> remove_values(std::vector<int> integers, std::vector<int> values) {
-  return {};
+  std::vector<int> result;
+  std::unordered_map<int,int> map;
+  
+  for (int el : values) {
+    map[el]++;
+  }
+  
+  for (int el : integers){
+    if(map.find(el) == map.end()) {
+      result.push_back(el);
+    }
+  }
+  
+  
+  return result;
 }
