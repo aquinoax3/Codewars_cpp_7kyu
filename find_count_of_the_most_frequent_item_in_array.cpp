@@ -8,8 +8,22 @@
 
 
 #include <vector>
+#include <unordered_map>
 
 unsigned int most_frequent_item_count(const std::vector<int>& collection) {
-  //your code here
-  return 0;
+  if (collection.size() == 0) return 0;
+  std::unordered_map<int, int> map;
+  unsigned int max = 0;
+  
+  for (int el : collection) {
+    map[el]++;
+  }
+  
+  for (auto it = map.begin(); it != map.end(); it++) {
+    if (it->second > max) {
+      max = it->second;
+    }
+  }
+  
+  return max;
 }
