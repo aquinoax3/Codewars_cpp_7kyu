@@ -12,18 +12,16 @@
 // [3,3] => 0
 
 #include <vector>
+#include <cstdlib>
+#include <iostream>
 
 int elevator_distance(std::vector<int> array) {
   int sum = 0;
   
-  for (int i = 0; i < array.size(); i++) {
-    if (array[i] > array[i + 1]) {
-      int total = array[i] - array[i + 1]
-      sum += total;
-    } else {
-      int total = array[i] + array[i + 1]
-      sum += total;
-    }
+  for (int i = 0; i < array.size() - 1; i++) {
+    int total = std::abs(array[i] - array[i + 1]);
+    std::cout << total << std::endl;
+    sum += total;
   }
   return sum;
 }
