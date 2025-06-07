@@ -6,7 +6,19 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 
 std::vector<std::string> word_to_bin(std::string word) {
-  // your code here
+  // vector to store binary as a string
+  std::vector<std::string> result;
+  
+  // iterate through each char in string 
+  for (char el : word) {
+    // get the ascii value of it
+    int asciiValue = static_cast<int>(el);
+    std::cout << el << " - " << asciiValue << std::endl;
+    
+    // convert the int into binary
+    // convert tghe binary into string 
+  }
 }
