@@ -36,3 +36,19 @@ std::string trim(const std::string& phrase, size_t size) {
   
   return result + "...";
 }
+
+
+// used the string method substr
+
+#include <string>
+#include <iostream>
+
+std::string trim(const std::string& phrase, size_t size) {
+  if (phrase.size() <= size) {
+    return phrase;
+  } else if (size <= 3) {
+    return phrase.substr(0, size) + "...";
+  } else if (phrase.size() > size) {
+    return phrase.substr(0, size - 3) + "...";
+  }
+}
