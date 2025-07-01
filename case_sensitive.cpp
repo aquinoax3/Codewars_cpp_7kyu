@@ -14,8 +14,19 @@
 
 std::pair<bool, std::vector<char>> caseSensitive(const std::string& str) {
   // declare a pair with bool, and vec of char
+  std::pair<bool, std::vector<char>> result;
+  
   // iterate through the string, if char is upper case add to vector
-  // if vector is not empty set the pair.first to true
-  // return pair
-  return { true, {} };
+  for (char el : str) {
+    if (std::isalpha(el) && el == std::toupper(el)) {
+      result.second.push_back(el);
+    }
+  }
+
+  // if vector is empty set the pair.first to true
+ if (result.second.empty()) {
+    result.first = true;
+  } 
+  
+  return result;
 }
