@@ -11,16 +11,21 @@
 // "zzZAaa"              -->  "aaABbb"
 
 
-
 #include <string>
+#include <cctype>
 #include <iostream>
 
 std::string nextLetter(std::string str) {
   std::string result = "";
+  std::cout << str << std::endl;
   
   for (char letter : str) {
     if (letter == 32) { 
       result += " ";
+    } else if (isdigit(letter)) {
+      result += letter;
+    } else if (!isalpha(letter)) {
+      result += letter;
     } else if (letter == 90) {
       result += char(65);
     } else if (letter == 122) {
