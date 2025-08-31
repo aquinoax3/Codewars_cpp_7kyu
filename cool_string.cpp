@@ -26,8 +26,14 @@
 
 bool cool_string(const std::string& s) {
   
+  if (s.size() == 1) {
+    if (!isalpha(s[0])) {
+      return false;
+    }
+  }
+  
   for (int i = 0; i < s.size() - 1; i++) {
-    if (isdigit(s[i]) || !isalpha(s[i]) ) {
+    if (!isalpha(s[i])) {
       return false;
     }
     
@@ -40,6 +46,7 @@ bool cool_string(const std::string& s) {
       return false;
     }
   }
+  
   
   return true;
 }
