@@ -16,7 +16,24 @@
 
 
 #include <math.h>
+#include <vector>
+
+
 int predictAge(int age1, int age2, int age3, int age4, int age5, int age6, int age7, int age8) {
+  std::vector<int> ages = {age1, age2, age3, age4, age5, age6, age7, age8};
+  std::vector<int> agesMultiplied;
+  int ageSum;
   
-  return 1;
+  for (int age : ages) {
+    int ageMutiplied = age * age;
+    agesMultiplied.push_back(ageMutiplied);
+  }
+  
+  for (int age : agesMultiplied) {
+    ageSum += age;
+  }
+  
+  int squareRoot = std::sqrt(ageSum);
+  
+  return squareRoot/2;
 }
