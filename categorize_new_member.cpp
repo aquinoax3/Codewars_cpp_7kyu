@@ -20,7 +20,7 @@
 std::vector<std::string> openOrSenior(std::vector<std::pair<int, int>>& data) {
   std::vector<std::string> result;
   
-  for (auto info : data) {
+  for (std::pair<int, int> info : data) {
     if (info.first >= 55 && info.second  > 7) {
       result.push_back("Senior");
     } else {
