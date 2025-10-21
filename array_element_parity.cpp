@@ -17,6 +17,20 @@
 // Good luck!
 
 
+#include <unordered_set>
+
 int solve (std::vector<int> v){
-  //..
+  std::unordered_set<int> parity(v.begin(), v.end());
+  int missing;
+  
+  for (int num : v) {
+    if (num > 0 && parity.find(num * -1) == parity.end()) {
+        missing = num;
+    }
+    if (num < 0 && parity.find(num * -1) == parity.end()) {
+        missing = num;
+    }
+  }
+  
+  return missing;
 }
