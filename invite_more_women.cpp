@@ -19,7 +19,18 @@
 
 
 #include <vector>
+#include <unordered_map>
 
 bool invite_more_women(const std::vector<int> &invited) {
-  return true;
+  std::unordered_map<int,int> guests;
+  
+  for (int num : invited) {
+    guests[num]++;
+  }
+    
+  if (guests[-1] < guests[1]) {
+    return true;
+  } else {
+    return false;
+  }
 }
