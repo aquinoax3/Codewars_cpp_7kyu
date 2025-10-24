@@ -10,6 +10,27 @@
 
 #include <string>
 
+std::string reverse(std::string word) {
+  std::string result = "";
+  
+  for (int i = word.size() - 1; i >= 0; i--) {
+    result += word[i];
+  }
+  
+  return result;
+}
+
+
 std::string shorter_reverse_longer(const std::string& a, const std::string& b) {
-    return "";
+  int strSizeA = a.size();
+  int strSizeB = b.size();
+  
+  if (strSizeA == strSizeB) {
+    return b + reverse(a) + b;
+  } else if (strSizeA > strSizeB) {
+    return b + reverse(a) + b;
+  } else {
+    return a + reverse(b) + a;
+  }
+
 }
