@@ -25,9 +25,7 @@ std::string shorter_reverse_longer(const std::string& a, const std::string& b) {
   int strSizeA = a.size();
   int strSizeB = b.size();
   
-  if (strSizeA == strSizeB) {
-    return b + reverse(a) + b;
-  } else if (strSizeA > strSizeB) {
+  if (strSizeA == strSizeB || strSizeA > strSizeB) {
     return b + reverse(a) + b;
   } else {
     return a + reverse(b) + a;
