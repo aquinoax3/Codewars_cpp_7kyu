@@ -79,13 +79,49 @@ std::string getTurkishNumber(unsigned int n) {
     
     result = arabic[10] + " " + arabic[secondDigit];
     
+  } else if (n > 20 && n < 30) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[20] + " " + arabic[secondDigit];
+  } else if (n > 30 && n < 40) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[30] + " " + arabic[secondDigit];
+  } else if (n > 40 && n < 50) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[40] + " " + arabic[secondDigit];
+  } else if (n > 50 && n < 60) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[50] + " " + arabic[secondDigit];
+  } else if (n > 60 && n < 70) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[60] + " " + arabic[secondDigit];
   } else if (n > 70 && n < 80) {
      std::string numStr = std::to_string(n);
     int secondDigit = numStr[1] - '0';
     
     result = arabic[70] + " " + arabic[secondDigit];
+  } else if (n > 80 && n < 90) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[80] + " " + arabic[secondDigit];
+  } else if (n > 90 && n < 100) {
+     std::string numStr = std::to_string(n);
+    int secondDigit = numStr[1] - '0';
+    
+    result = arabic[90] + " " + arabic[secondDigit];
   }
   
-   
+  
+  
   return result;
 }
