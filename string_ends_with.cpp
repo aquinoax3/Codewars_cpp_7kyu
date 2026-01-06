@@ -8,15 +8,12 @@
 
 
 #include <string>
-#include <iostream>
-
 
 bool solution(std::string const &str, std::string const &ending) {
-    std::string result = str.substr(str.size() - ending.size(), ending.size());
-    
-    std::cout << "og: " << str << std::endl;
-    std::cout << result << std::endl;
-    std::cout << "end: " << ending << std::endl;
-    
-    return result == ending;
+  
+  if (ending.size() > str.size()) return 0;
+  
+  std::string result = str.substr(str.size() - ending.size());
+   
+  return result == ending;
 }
