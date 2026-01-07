@@ -8,15 +8,20 @@
 #include <vector>
 #include <optional>
 #include <iostream>
-
+#include <cmath>
+#define _TEST_DETAILED_
 
 using opt_int_t = std::optional<int>;
 using matrix_t = std::vector<std::vector<int>>;
 
 opt_int_t center(const matrix_t& mat) {
-  if (mat.size() % 2 == 0) {
+  if (mat.size() % 2 == 0 || mat[0].size() % 2 == 0) {
     return std::nullopt;
-  }
+  } 
   
-  return std::nullopt;
+  int middleArray = static_cast<int>(std::ceil(mat.size() / 2));
+  int middleElement = static_cast<int>(std::ceil(mat[middleArray].size() / 2));
+  
+  
+  return mat[middleArray][middleElement] ;
 }
