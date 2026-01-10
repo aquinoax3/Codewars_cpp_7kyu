@@ -17,11 +17,21 @@
 // (134679) is the minimum number could be formed from {1, 9, 3, 1, 7, 4, 6, 6, 7} , Without duplications
 
 
-
 #include <vector>
+#include <unordered_set>
+#include <algorithm>
+using namespace std; 
 
-
-unsigned long long minValue (std::vector <int> values) {
-    // Your code is here .. enjoy !!!
- return 1 ; 
+unsigned long long minValue (vector <int> values) {
+  std::unordered_set<int> noDupes(values.begin(), values.end());
+  std::vector<int> sortedVec(noDupes.begin(), noDupes.end());
+  std::sort(sortedVec.begin(), sortedVec.end());
+  
+  unsigned long long result = 0;
+  
+  for (int num : sortedVec) {
+   result = result * 10 + num;
+  }
+  
+ return result; 
 }
