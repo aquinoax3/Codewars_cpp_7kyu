@@ -14,5 +14,19 @@
 #include <vector>
 
 unsigned int number(const std::vector<std::pair<int, int>>& busStops){
-  //your code here
+ unsigned int total = 0;
+  
+  // Explicit way of iterating using range loop
+  for (std::pair<int, int> el : busStops) {
+    total += el.first;
+    total -= el.second;
+  }
+  
+  // structured bindings to unpack the pair into 'key' and 'value'
+  // for (auto [first, second] : busStops) {
+  //   total += first;
+  //   total -= second;
+  // }
+  
+  return total;
 }
