@@ -12,6 +12,22 @@
 //                                        #  9+3 = 12  -->  2
 
 #include <vector>
+
 std::vector<int> incrementer(std::vector<int> nums){
-  return 
+  std::vector<int> result;
+  
+  for (int i = 0; i < nums.size(); i++) {
+    if (nums[i] + i + 1 >= 10) {
+      
+      int num = nums[i] + i + 1;
+      std::string numStr = std::to_string(num);
+      int lastDigit = numStr[numStr.size() - 1] - '0';
+      
+      result.push_back(lastDigit);  
+    } else {
+      result.push_back(nums[i] + i + 1);
+    }
+  }
+  
+  return result;
 }
