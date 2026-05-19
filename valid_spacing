@@ -8,7 +8,8 @@ bool valid_spacing(const std::string& s) {
   
   
   for (int i = 0; i < s.size(); i++) {
-    if (isalpha(s[i - 1]) && s[i] == ' ' && isalpha(s[i + 1])) {
+    if ( s[i] == ' ') {
+      if (s[i - 1] == ' ' || s[i + 1] == ' ')
       return false;
     }
   }
