@@ -13,8 +13,23 @@
 
 // Note: Assume that all values in the list are positive integer values > 0 and each value in the list is unique.
 
+
 #include <vector>
 
 unsigned long long int sum_factorial(std::vector<int> vi){
-//your code here
+  unsigned long long int total = 0;
+  
+  for (int i = 0; i < vi.size(); i++) {
+    int num = vi[i];
+    
+    unsigned long long int facTotal = 1;
+    while (num > 0) {
+      facTotal *= num;
+      num--;
+    }
+    
+    total += facTotal;
+  }
+  
+  return total;
 }
