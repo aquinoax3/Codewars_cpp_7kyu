@@ -14,6 +14,8 @@
 
 
 #include <string>
+#include <cctype>
+#include <iostream>
 
 std::string gimme_the_letters(const std::string& sp) {
   if (sp[0] == sp[2]) {
@@ -30,11 +32,16 @@ std::string gimme_the_letters(const std::string& sp) {
   
   for (int i = 0; i < alphaLow.size(); i++) {
     if (alphaLow[i] == sp[0]) {
-      while (alphaLow[i] != sp[2]) {
-        result += alphaLow[i];
-      }
-    } else {
-      continue;
+        while (alphaLow[i] != sp[2]) {
+          result += alphaLow[i + 1];
+          i++;
+        }      
+    } else if (std::toupper(alphaLow[i]) == sp[0]) {
+      while (std::toupper(alphaLow[i]) != sp[2]) {
+          char upper = std::toupper(alphaLow[i + 1]);
+          result += upper;
+          i++;
+        }      
     }
   }
   
