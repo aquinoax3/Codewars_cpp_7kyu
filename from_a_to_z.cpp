@@ -25,7 +25,6 @@ std::string gimme_the_letters(const std::string& sp) {
   }
   
   std::string alphaLow = "abcdefghijklmnopqrstuvwxyz";
-  std::string alphaCap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   
   std::string result = "";
   result += sp[0];
