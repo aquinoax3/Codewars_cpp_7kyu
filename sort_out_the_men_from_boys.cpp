@@ -37,24 +37,44 @@
 // Since , (Duplications are not included when separating) , then you can see only one (-282) was appeared in the final array/list .
 
 
-
 #include <vector>
+#include <unordered_set>
+#include <algorithm> 
+#include <functional>
+
 
 using namespace std ; 
 
 vector <int> menFromBoys (vector <int> values) {
- std::vector<int> result;
+  std::unordered_set<int> evenSet;
+  std::unordered_set<int> oddSet;
+  std::vector<int> result;
   
   for (int num : values) {
     if (num % 2 == 0) {
-      result.push_back(num);
+      evenSet.insert(num);
     }
   }
   
+  std::vector<int> even(evenSet.begin(), evenSet.end());
+  std::sort(even.begin(), even.end());
+  
   for (int num : values) {
-    if (num % 2 == 1) {
-      result.push_back(num);
+    if (num % 2 != 0) {
+      std::cout << num << std::endl;
+      oddSet.insert(num);
     }
+  }
+
+  std::vector<int> odd(oddSet.begin(), oddSet.end());
+  std::sort(odd.begin(), odd.end(), std::greater<int>());
+  
+  for (int num : even) {
+    result.push_back(num);
+  }
+  
+  for (int num : odd) {
+    result.push_back(num);
   }
   
   return result;
