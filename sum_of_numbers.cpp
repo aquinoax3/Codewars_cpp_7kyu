@@ -14,19 +14,22 @@
 
 
 int get_sum(int a, int b) {
-  if(a == b) {
+  
+  if (a == b) {
     return a;
   }
-  
-  if (a == 0 || b == 0) {
-    return a + b;
-  }
-  
+    
   int sum = 0;
   
-  for (int i = a; i <= b; i++) {
-    sum += i;
+  if (a < b) {
+    for (int i = a; i <= b; i++) {
+      sum += i;
+    }
+  } else {
+    for (int i = b; i <= a; i++) {
+      sum += i;
+    }
   }
   
-  std::cout << sum << std::endl;
+  return sum;
 }
