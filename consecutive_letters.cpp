@@ -16,21 +16,29 @@
 
 #include <iostream>
 #include <unordered_set>
+#include <algorithm>
 
 bool solve(std::string s) {
-	if (s.size() == 1) {
+  std::sort(s.begin(), s.end());
+	
+  if (s.size() == 1) {
     return true;
   }
   
   std::unordered_set<char> seen;
   
-  for (int i = 0; i < s.size(); i++) {
-    if (s.find(s[i]) != s.end()) {
+  for (int i = 0; i < s.size() - 1; i++) {
+    if (seen.find(s[i]) != seen.end()) {
       return false;
     }
     
+    if (int(s[i]) + 1 != int(s[i +1])) {
+      return false;
+    }
+    
+    seen.insert(s[i]);
   }
   
   
-  return false
+  return true;
 }
